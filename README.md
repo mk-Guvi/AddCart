@@ -21,3 +21,5 @@
 9.)create a tag array in the state and call the values of tags using the map function in an ul tag
 
 10.)create conditional rendering file and create a conditional component init that returns the some text if the array of tags holds null else prints the values of the arrays.
+
+11.)create setstate to change the value of count on button INCREAMENT.
