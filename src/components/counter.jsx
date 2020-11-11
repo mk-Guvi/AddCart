@@ -40,11 +40,7 @@ class Counter extends Component {
         
         <button className="btn btn-secondary btn-sm">Increament</button>
         
-        <ul>{this.state.tags.map((tag,tagIndex)=>{
-            return(
-            <li key={tagIndex}>{tag}</li>
-            )
-        })}</ul>
+       
         </>);
     }
    
