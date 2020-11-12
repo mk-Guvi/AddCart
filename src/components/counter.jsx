@@ -7,11 +7,11 @@ import React, { Component } from 'react';
 
 class Counter extends Component {
     state={
-        count:0,
+        value:this.props.counter.value,//every react component has a property called props whic is a JS object that stores the attributs of the component(counter component)//note :counter.value is addedd as we use extract vlaue from  counter object
         tags:[1,2,3]
     }
     formatCount=()=>{
-        const {count}=this.state
+        const {value: count}=this.state
         return(  count===0?<h4>Zero</h4>:count
             // this.state.count===0?"zero":this.state.count//if we have same this.same so we can destructure it
         )
@@ -36,7 +36,7 @@ class Counter extends Component {
 handleIncreament=()=>{
     console.log("increamented",this)// this will print undefined because when the function is called without any object by default it refers to the window object and the strict mode is enbled then it will display as undefind to overcome this issue we can use constructors or use arrow functions
     this.setState(
-        {count:this.state.count+1}
+        {value:this.state.value+1}
     )//it will change the state by detecting which part of the dom is changed based on the change it will bring the virtual dom sync with actual dom
     
 }
@@ -48,7 +48,7 @@ handleIncreament=()=>{
 
         return (
         <>
-        <h1>Hello counter</h1>
+        {/* <h1>Hello counter</h1> */}
         
         {/* <span style={this.styles}className="badge badge-primary m-2">{this.formatCount()}</span> external styles*/}
         
@@ -61,7 +61,10 @@ handleIncreament=()=>{
         <span className={this.getClasses()}>{this.formatCount()}</span>
         
         <button onClick={this.handleIncreament} className="btn btn-secondary btn-sm">Increament</button>
-        
+       
+       
+       <button onClick={()=>this.props.onDelete(this.props.counter.id)} className="btn btn-danger btn-sm m-2 ">Delete</button>
+        <br/>
        
         </>);
     }
@@ -69,7 +72,7 @@ handleIncreament=()=>{
 
     getClasses() {
         let classes = "badge m-2 badge-";
-        classes += this.state.count === 0 ? "warning" : "primary";
+        classes += this.state.value === 0 ? "warning" : "primary";
         return classes;
     }
 }
