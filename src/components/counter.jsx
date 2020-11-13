@@ -48,6 +48,10 @@ handleIncreament=()=>{
 
         return (
         <>
+
+
+        
+
         {/* <h1>Hello counter</h1> */}
         
         {/* <span style={this.styles}className="badge badge-primary m-2">{this.formatCount()}</span> external styles*/}

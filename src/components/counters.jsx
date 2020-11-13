@@ -15,10 +15,19 @@ class Counters extends Component {
         const counters=this.state.counters.filter(c=>c.id!==counterId)
         this.setState({counters})
      }
+
+     handleReset=()=>{
+         const counters=this.state.counters.map(c=>{//this will not update as we have two states one in counter.jsx and another in counters.jsx
+             c.value=0
+             return c
+         })
+         this.setState({counters})
+     }
  
      render() { 
-        return ( <div>
-
+        return ( <div className="container">
+            <button onLick={this.handleReset} className="btn btn-primary btn-sm m-2">RESET</button>
+            <br/>
             {this.state.counters.map(counter=>
            
            <Counter 
