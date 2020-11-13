@@ -6,12 +6,9 @@ import React, { Component } from 'react';
 //Note:Component is the parent class and theCounter is the child class
 
 class Counter extends Component {
-    state={
-        value:this.props.counter.value,//every react component has a property called props whic is a JS object that stores the attributs of the component(counter component)//note :counter.value is addedd as we use extract vlaue from  counter object
-        tags:[1,2,3]
-    }
+   
     formatCount=()=>{
-        const {value: count}=this.state
+        const {value: count}=this.props.counter//as we removed state we are using props
         return(  count===0?<h4>Zero</h4>:count
             // this.state.count===0?"zero":this.state.count//if we have same this.same so we can destructure it
         )
@@ -33,13 +30,7 @@ class Counter extends Component {
 // }
 
 //arrow function dont rebind this keyword instead they inherit it
-handleIncreament=()=>{
-    console.log("increamented",this)// this will print undefined because when the function is called without any object by default it refers to the window object and the strict mode is enbled then it will display as undefind to overcome this issue we can use constructors or use arrow functions
-    this.setState(
-        {value:this.state.value+1}
-    )//it will change the state by detecting which part of the dom is changed based on the change it will bring the virtual dom sync with actual dom
-    
-}
+
 
     render() { 
         //this both lines are commented as we use getclasses method
@@ -64,7 +55,8 @@ handleIncreament=()=>{
 
         <span className={this.getClasses()}>{this.formatCount()}</span>
         
-        <button onClick={this.handleIncreament} className="btn btn-secondary btn-sm">Increament</button>
+        {/**this.props.counter refers to the counter object which can make the impementation of the event handler simpler */}
+        <button onClick={()=>this.props.onIncreament(this.props.counter)} className="btn btn-secondary btn-sm">Increament</button>
        
        
        <button onClick={()=>this.props.onDelete(this.props.counter.id)} className="btn btn-danger btn-sm m-2 ">Delete</button>
@@ -76,7 +68,7 @@ handleIncreament=()=>{
 
     getClasses() {
         let classes = "badge m-2 badge-";
-        classes += this.state.value === 0 ? "warning" : "primary";
+        classes += this.props.counter.value === 0 ? "warning" : "primary";//as we removed th state we are changing it to props
         return classes;
     }
 }

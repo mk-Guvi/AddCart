@@ -23,16 +23,33 @@ class Counters extends Component {
          })
          this.setState({counters})
      }
+
+     handleIncreament=(counter)=>{
+         //console.log("incrent",counter)
+         const counters=[...this.state.counters]//this wil get the clone of counters
+         const index=counters.indexOf(counter)//to update the selected counter we need its index
+         counters[index]={...counter}//making the clone of the counter selected
+         counters[index].value++//changing the counter value 
+         //counters[0].value++//console.log(this.state.counter[0])--this will print the increamented vaue of counter once  the increament button is clicked but it will not update the UI
+         this.setState({counters})//displaying the updated UI
+         console.log(this.state.counters[index])
+     }
  
      render() { 
         return ( <div className="container">
-            <button onLick={this.handleReset} className="btn btn-primary btn-sm m-2">RESET</button>
-            <br/>
+           
+            
+
+            <button onClick={this.handleReset} className="btn btn-primary btn-sm m-2">RESET</button>
+            
+            <br/>    
+
             {this.state.counters.map(counter=>
            
            <Counter 
            key={counter.id}//key attribute is used by react intrenally so we cant be able to access it
             onDelete={this.handleDelete} 
+            onIncreament={this.handleIncreament}
             counter={counter}//this stores all the items of object counter so we can avoid writing the id value attriubute seperatly and we call its values in the requires areas like in onclick event of delete button
             id={counter.id}//so we use id as we cant acces from the key
              value={counter.value}/>

@@ -36,4 +36,9 @@ Note the compnent that   owns a piece of state ,should be the one modifying it s
 
 16.)In counters.jsx,add handle delete function that removes the counter button and updates with reminng counters and call this function as an onDelete attribute  and add counter attribute with counter object so that we can access the its values.
 
+
 17.)create a reset button in counters.jsx withh on click attribute tyhat calls the functtion handleReset which resets the value of counters to zero.
+
+18.)In counter.jsx,Remove the state and the increament function,change the state to props for the increament button with including  attributes and also in formatcount and getclasses functions.
+
+19.)In counters.jsx,add the handleincreament function that returns the increamented values of the counter and add it in the Onincreament attribute of the increament button.
