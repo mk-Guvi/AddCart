@@ -33,8 +33,8 @@
 Note the compnent that   owns a piece of state ,should be the one modifying it so here the to delet the counter you should use props that deletes the counter from the counters.jsx 
 
 15.)create the delete  button in counter.jsx and add attribute the calls the props that can delete the counter button
-
-16.)In counters.jsx,add handle delete function that removes the counter button and updates with reminng counters and call this function as an onDelete attribute  and add counter attribute with counter object so that we can access the its values.
+0i
+16.)In counters.jsx,add handle delete function that removes the counter buttoi96n and updates with reminng counters and call this function as an onDelete attribute  and add counter attribute with counter object so that we can access the its values.
 
 
 17.)create a reset button in counters.jsx withh on click attribute tyhat calls the functtion handleReset which resets the value of counters to zero.
@@ -42,3 +42,7 @@ Note the compnent that   owns a piece of state ,should be the one modifying it s
 18.)In counter.jsx,Remove the state and the increament function,change the state to props for the increament button with including  attributes and also in formatcount and getclasses functions.
 
 19.)In counters.jsx,add the handleincreament function that returns the increamented values of the counter and add it in the Onincreament attribute of the increament button.
+
+20.)create navbar.jsx file under components folder .create the  navber component init.Import this component in the app.jsx
+
+21.)create app.jsx under  src and create the app  component init that returns the navber and counters component and import this app component in the index.jsx as a component.

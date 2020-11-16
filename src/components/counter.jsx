@@ -13,6 +13,8 @@ class Counter extends Component {
             // this.state.count===0?"zero":this.state.count//if we have same this.same so we can destructure it
         )
        }
+
+       
 // styles={//un  cmmment if use want use styles as external
 //     fontSize:15,
 //     fontWeight: "bold"
