@@ -46,3 +46,9 @@ Note the compnent that   owns a piece of state ,should be the one modifying it s
 20.)create navbar.jsx file under components folder .create the  navber component init.Import this component in the app.jsx
 
 21.)create app.jsx under  src and create the app  component init that returns the navber and counters component and import this app component in the index.jsx as a component.
+
+22.)From Counters.js  move the counters state and its method to app.js.and change  states of counters to props as we inherit it  from app.jsx
+
+23.)In app.js,Add the counter propperties by calling its methods.
+s
+24.)In App.jsx,Add a property that returns the total number of counters whose value is greater than 0 and call it as props in the navbar.jsx
